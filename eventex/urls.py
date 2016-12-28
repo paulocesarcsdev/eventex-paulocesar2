@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from eventex.core import views
+#from eventex.core views import home
 urlpatterns = [
     #url(r'^$', home),
     url(r'^$', views.home, name='home'),
