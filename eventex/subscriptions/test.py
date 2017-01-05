@@ -39,7 +39,7 @@ class SubscribeTest(TestCase):
 
 class SubscribePostTest(TestCase):
     def setUp(self):
-        data = dict(nome='Paulo Cesar', cpf='1234567890',
+        data = dict(name='Paulo Cesar', cpf='12345678901',
                     email='paulo@cesar.net', phone='62-9413-0086')
         self.resp = self.client.post('/inscricao/', data)
 
