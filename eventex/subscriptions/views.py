@@ -22,7 +22,8 @@ def subscribe(request):
 
             return HttpResponseRedirect('/inscricao/')
         else:
-            return render(request, 'subscriptions/subscription_form.html')
+            return render(request, 'subscriptions/subscription_form.html',
+                          {'form': SubscriptionForm()})
 
     else:
         context = {'form': SubscriptionForm()}
