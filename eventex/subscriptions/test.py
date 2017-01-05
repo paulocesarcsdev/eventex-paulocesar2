@@ -37,10 +37,11 @@ class SubscribeTest(TestCase):
 
 
 class SubscribePostTest(TestCase):
+    def setUp(self):
+        data = dict(nome='Paulo Cesar', cpf='1234567890',
+                    email='paulo@cesar.net', phone='62-9413-0086')
+        self.resp = self.client.post('/inscricao/', data)
+
     def test_post(self):
         """Valid POST should redirect to /inscricao/"""
-        data = dict(nome='Henrique Bastos', cpf='1234567890',
-                    email='henrique@bastos.net', phone='21-99618-6180')
-        response = self.client.post('/inscricao/', data)
-
-        self.assertEqual(302, response.status_code)
+        self.assertEqual(302, self.resp.status_code)
