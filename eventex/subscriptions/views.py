@@ -8,7 +8,7 @@ def subscribe(request):
     if request.method == 'POST':
         mail.send_mail('Confirmação da inscrição',
                        'Message',
-                       'sender@gmail.com',
+                       'contato@eventex.com.br',
                        ['visitor@email'])
 
         return HttpResponseRedirect('/inscricao/')
