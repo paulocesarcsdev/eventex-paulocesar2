@@ -31,9 +31,6 @@ def create(request):
                'subscriptions/subscription_email.txt',
                {'subscription': subscription})
 
-    # Success feedback
-    messages.success(request, 'Inscrição realizada com sucesso!')
-
     return HttpResponseRedirect('/inscricao/{}/'.format(subscription.pk))
 
 
@@ -43,8 +40,7 @@ def new(request):
 
 
 def detail(request):
-    from django.http import HttpResponse
-    return HttpResponse()
+    return render(request, 'subscriptions/subscription_detail.html')
 
 
 def _send_mail(subject, from_, to, template_name, context):
