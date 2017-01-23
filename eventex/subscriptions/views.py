@@ -40,7 +40,14 @@ def new(request):
 
 
 def detail(request):
-    return render(request, 'subscriptions/subscription_detail.html')
+    subscription = Subscription(
+        name='Paulo César',
+        cpf='12345678901',
+        email='paulo@cesar.net',
+        phone='62-9413-0086'
+    )
+    return render(request, 'subscriptions/subscription_detail.html',
+                  {'subscription': subscription})
 
 
 def _send_mail(subject, from_, to, template_name, context):
