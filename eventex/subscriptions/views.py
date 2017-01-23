@@ -39,13 +39,9 @@ def new(request):
                   {'form': SubscriptionForm()})
 
 
-def detail(request):
-    subscription = Subscription(
-        name='Paulo César',
-        cpf='12345678901',
-        email='paulo@cesar.net',
-        phone='62-9413-0086'
-    )
+def detail(request, pk):
+    subscription = Subscription.objects.get(pk=pk)
+
     return render(request, 'subscriptions/subscription_detail.html',
                   {'subscription': subscription})
 

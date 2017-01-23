@@ -20,7 +20,7 @@ from eventex.subscriptions.views import subscribe, detail
 
 urlpatterns = [
     url(r'^inscricao/$', subscribe),
-    url(r'^inscricao/1/$', detail),
+    url(r'^inscricao/(\d+)/$', detail),
     url(r'^$', views.home, name='home'),
     url(r'^admin/', admin.site.urls),
 ]
