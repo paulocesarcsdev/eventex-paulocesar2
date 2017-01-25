@@ -1,8 +1,8 @@
 from django.conf.urls import url
-from eventex.subscriptions.views import subscribe, detail
+from eventex.subscriptions.views import new, detail
 
 urlpatterns = [
-    url(r'^inscricao/$', subscribe, name='new'),
-    url(r'^inscricao/(\d+)/$', detail, name='detail'),
+    url(r'^$', new, name='new'),
+    url(r'^(\d+)/$', detail, name='detail'),
 
 ]

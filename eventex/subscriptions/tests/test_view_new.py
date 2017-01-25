@@ -5,7 +5,7 @@ from eventex.subscriptions.forms import SubscriptionForm
 from eventex.subscriptions.models import Subscription
 
 
-class SubscribeGet(TestCase):
+class SubscriptionsNewGet(TestCase):
     def test_csrf(self):
         """Html must contain csrf"""
         self.assertContains(self.resp, 'csrfmiddlewaretoken')
@@ -39,7 +39,7 @@ class SubscribeGet(TestCase):
         self.assertIsInstance(form, SubscriptionForm)
 
 
-class SubscribePostValid(TestCase):
+class SubscriptionsNewPostValid(TestCase):
     def setUp(self):
         data = dict(name='Paulo César', cpf='12345678901',
                     email='paulo@cesar.net', phone='62-9413-0086')
@@ -56,7 +56,7 @@ class SubscribePostValid(TestCase):
         self.assertTrue(Subscription.objects.exists())
 
 
-class SubscribeInvalid(TestCase):
+class SubscriptionsNewPostInvalid(TestCase):
     def setUp(self):
         self.resp = self.client.post(r('subscriptions:new'), {})
 
